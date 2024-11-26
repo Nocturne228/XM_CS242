@@ -50,7 +50,12 @@ def ski_to_prog(fname, execute):
         for e in prog.es:
             e_subst = ski_prog.subst(e, env)
             e_eval = ski_eval_eval(e_subst)
+            print()
+            print("===Expression===")
+            print(e_subst)
+            print("===Evaluation===")
             print(e_eval)
+            print()
 
 
 if __name__ == "__main__":
