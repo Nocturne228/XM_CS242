@@ -19,6 +19,7 @@ def find_missing(n: int, arr: np.ndarray) -> np.ndarray:
     [1, 3, 4]
     """
     # BEGIN_YOUR_CODE
+    return np.sort(np.setdiff1d(np.arange(n), arr))
     # END_YOUR_CODE
 
 
@@ -33,6 +34,7 @@ def skyline(heights: np.ndarray) -> int:
     3
     """
     # BEGIN_YOUR_CODE
+    return np.unique(np.maximum.accumulate(heights)).size
     # END_YOUR_CODE
 
 
@@ -49,4 +51,8 @@ def matched(parentheses: np.ndarray) -> bool:
     False
     """
     # BEGIN_YOUR_CODE
+    values = 1. * (parentheses == '(') - 1. * (parentheses == ')')
+    cum_values = np.cumsum(values)
+    return np.logical_and(cum_values[-1] == 0,
+                          np.all(cum_values >= 0.))
     # END_YOUR_CODE
