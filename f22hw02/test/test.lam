@@ -1,18 +1,14 @@
 # You can write one-line comments in Python style.
 
 # Definition block comes first.
-def inc = S (S (K S) K);
-def _0  = S K;
+def inc = \n.\f.\x. f (n f x);
+def _0  = \f.\x. x;
 def _1  = inc _0;
-def c1 = S (K S) K;
-def c2 = S ((c1 S (c1 K (c1 S (S (c1 c1 I) (K I)))))) (K (c1 K I));
 
 # Expression block comes next.
-_0 f x;
+_0 f x; 
 _1 f x;
 (inc _1) f x;
-c1 x y z;
-c2 x y z;
 
 # Expected output is as follows:
 # x
